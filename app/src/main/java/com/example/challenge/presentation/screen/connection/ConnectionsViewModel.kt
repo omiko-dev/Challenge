@@ -49,7 +49,6 @@ class ConnectionsViewModel @Inject constructor(
                             isLoading = it.loading
                         )
                     }
-
                     is Resource.Success -> {
                         _connectionState.update { currentState -> currentState.copy(connections = it.data.map { it.toPresenter() }) }
                     }
@@ -72,6 +71,6 @@ class ConnectionsViewModel @Inject constructor(
     }
 
     sealed interface ConnectionUiEvent {
-        object NavigateToLogIn : ConnectionUiEvent
+        data object NavigateToLogIn : ConnectionUiEvent
     }
 }

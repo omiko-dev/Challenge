@@ -69,7 +69,7 @@ class LogInViewModel @Inject constructor(
                 .all { it }
 
         if (!areFieldsValid) {
-            updateErrorMessage(message = "Fields are not valid!")
+            updateErrorMessage(message = LoginErrorMessage.InvalidField.message)
             return
         }
 
@@ -81,8 +81,12 @@ class LogInViewModel @Inject constructor(
     }
 
     sealed interface LogInUiEvent {
-        object NavigateToConnections : LogInUiEvent
+        data object NavigateToConnections : LogInUiEvent
     }
+}
+
+enum class LoginErrorMessage(val message: String?){
+    InvalidField("Fields are not valid!")
 }
 
 

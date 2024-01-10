@@ -1,4 +1,4 @@
-package com.example.challenge.domain.user_data_key
+package com.example.challenge.datastore.user_data_key
 
 import androidx.datastore.preferences.core.stringPreferencesKey
 

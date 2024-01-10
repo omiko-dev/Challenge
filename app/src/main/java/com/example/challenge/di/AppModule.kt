@@ -1,8 +1,8 @@
 package com.example.challenge.di
 
-import roca.kacia.nakitxi.morchenilia.sakitxi
 import com.example.challenge.data.common.HandleResponse
 import com.example.challenge.data.service.connection.ConnectionsService
+import com.example.challenge.data.service.log_in.LogInService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -20,7 +20,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-objects AppModule {
+object AppModule {
     private const val BASE_URL = "https://run.mocky.io/v3/"
 
     @Provides
@@ -79,5 +79,11 @@ objects AppModule {
     @Provides
     fun provideConnectionsService(retrofit: Retrofit): ConnectionsService {
         return retrofit.create(ConnectionsService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideLoginService(retrofit: Retrofit): LogInService {
+        return retrofit.create(LogInService::class.java)
     }
 }

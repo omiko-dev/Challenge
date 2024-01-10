@@ -2,12 +2,10 @@ package com.example.challenge.di
 
 import com.example.challenge.domain.repository.connection.ConnectionsRepository
 import com.example.challenge.domain.repository.datastore.DataStoreRepository
-import com.example.challenge.domain.repository.log_in.LogInRepository
 import com.example.challenge.domain.usecase.connection.GetConnectionsUseCase
 import com.example.challenge.domain.usecase.datastore.ClearDataStoreUseCase
 import com.example.challenge.domain.usecase.datastore.GetTokenUseCase
 import com.example.challenge.domain.usecase.datastore.SaveTokenUseCase
-import com.example.challenge.domain.usecase.log_in.LogInUseCase
 import com.example.challenge.domain.usecase.validator.EmailValidatorUseCase
 import com.example.challenge.domain.usecase.validator.PasswordValidatorUseCase
 import dagger.Module

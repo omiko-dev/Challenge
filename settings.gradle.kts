@@ -13,6 +13,12 @@ dependencyResolutionManagement {
     }
 }
 
+buildscript {
+    repositories {
+        google()
+    }
+}
+
 rootProject.name = "Challenge"
 include(":app")
  
